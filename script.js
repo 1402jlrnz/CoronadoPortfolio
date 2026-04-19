@@ -41,31 +41,7 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Contact form handling
-const contactForm = document.getElementById('contactForm');
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    const formData = new FormData(contactForm);
-    const name = formData.get('name');
-    const email = formData.get('email');
-    const message = formData.get('message');
-    
-    // Simple validation
-    if (!name || !email || !message) {
-        showNotification('Please fill in all fields', 'error');
-        return;
-    }
-    
-    if (!isValidEmail(email)) {
-        showNotification('Please enter a valid email address', 'error');
-        return;
-    }
-    
-    // Simulate form submission (replace with actual form submission logic)
-    showNotification('Thank you for your message! I\'ll get back to you soon.', 'success');
-    contactForm.reset();
-});
+// Contact form handling removed - no contact section in current design
 
 // Email validation helper
 function isValidEmail(email) {
@@ -198,7 +174,7 @@ document.querySelectorAll('.project-card').forEach(card => {
 
 // Active navigation link highlighting
 window.addEventListener('scroll', () => {
-    const sections = document.querySelectorAll('section');
+    const sections = document.querySelectorAll('section[id="home"], section[id="projects"], section[id="about"]');
     const navLinks = document.querySelectorAll('.nav-link');
     
     let current = '';
@@ -212,8 +188,12 @@ window.addEventListener('scroll', () => {
     
     navLinks.forEach(link => {
         link.classList.remove('active');
-        if (link.getAttribute('href').slice(1) === current) {
-            link.classList.add('active');
+        const href = link.getAttribute('href');
+        if (href && href.includes('#')) {
+            const sectionId = href.split('#').pop();
+            if (sectionId === current) {
+                link.classList.add('active');
+            }
         }
     });
 });

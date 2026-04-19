@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1-Minute Rotoscope Project - Joseph Lorenz Coronado</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .project-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+        
+        .project-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .project-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .back-link {
+            position: absolute;
+            top: 100px;
+            left: 20px;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .back-link:hover {
+            color: #ffd700;
+        }
+        
+        .video-section {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        
+        .video-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+        
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .disclaimer {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin: 20px;
+            color: #856404;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+        
+        .content-sections {
+            padding: 80px 0;
+        }
+        
+        .content-section {
+            margin-bottom: 80px;
+        }
+        
+        .content-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 2px;
+        }
+        
+        .step-by-step {
+            display: grid;
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .step-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #667eea;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .step-title {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        .step-description {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .tutorial-content {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tutorial-content h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .tutorial-content p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .tutorial-content ul {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .tutorial-content li {
+            color: #666;
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        
+        .progress-timeline {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .progress-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item {
+            display: flex;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+        
+        .timeline-content {
+            flex: 1;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin: 0 2rem;
+        }
+        
+        .timeline-date {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-weight: 600;
+            white-space: nowrap;
+            z-index: 1;
+        }
+        
+        .timeline-title {
+            font-size: 1.3rem;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-description {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 768px) {
+            .project-header h1 {
+                font-size: 2rem;
+            }
+            
+            .back-link {
+                position: static;
+                margin-bottom: 2rem;
+                justify-content: center;
+            }
+            
+            .progress-timeline::before {
+                left: 20px;
+            }
+            
+            .timeline-item {
+                flex-direction: column !important;
+                margin-left: 40px;
+            }
+            
+            .timeline-content {
+                margin: 0;
+            }
+            
+            .timeline-date {
+                left: 20px;
+                transform: translateX(-50%);
+            }
+            
+            .tutorial-content {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">Joseph Coronado</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#about" class="nav-link">About</a>
+                </li>
+            </ul>
+            <div class="nav-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Header -->
+    <section class="project-header">
+        <a href="index.html#projects" class="back-link">
+            <i class="fas fa-arrow-left"></i> Back to Projects
+        </a>
+        <div class="container">
+            <h1>1-Minute Rotoscope Project</h1>
+            <p>A frame-by-frame animation project exploring the art of rotoscoping to create compelling visual narratives through video editing and animation techniques.</p>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section">
+        <div class="video-container">
+            <div class="video-wrapper">
+                <iframe 
+                    src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" 
+                    title="1-Minute Rotoscope Project"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <div class="disclaimer">
+                <strong>Disclaimer:</strong> This video was created for academic purposes only
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Sections -->
+    <section class="content-sections">
+        <div class="container">
+            
+            <!-- Step by Step Section -->
+            <div class="content-section">
+                <div class="section-header">
+                    <h2>Step by Step Process</h2>
+                </div>
+                <div class="step-by-step">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h3 class="step-title">Concept Development</h3>
+                        <p class="step-description">
+                            Initial brainstorming and storyboarding to define the narrative, visual style, and overall creative direction for the rotoscope animation.
+                        </p>
+                    </div>
+                    
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h3 class="step-title">Source Video Selection</h3>
+                        <p class="step-description">
+                            Choosing appropriate reference footage that provides clear visual elements suitable for rotoscoping and aligns with the creative vision.
+                        </p>
+                    </div>
+                    
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <h3 class="step-title">Frame-by-Frame Tracing</h3>
+                        <p class="step-description">
+                            Meticulously tracing each frame to create the rotoscope effect, ensuring smooth motion and consistent visual quality throughout the animation.
+                        </p>
+                    </div>
+                    
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <h3 class="step-title">Color and Style Application</h3>
+                        <p class="step-description">
+                            Applying color palettes, visual effects, and artistic styling to enhance the rotoscoped footage and achieve the desired aesthetic.
+                        </p>
+                    </div>
+                    
+                    <div class="step-card">
+                        <div class="step-number">5</div>
+                        <h3 class="step-title">Final Editing and Polish</h3>
+                        <p class="step-description">
+                            Compiling all frames, adjusting timing, adding transitions, and performing final quality checks to complete the 1-minute animation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tutorial Section -->
+            <div class="content-section">
+                <div class="section-header">
+                    <h2>Tutorial & Techniques</h2>
+                </div>
+                <div class="tutorial-content">
+                    <h3>Rotoscoping Fundamentals</h3>
+                    <p>
+                        Rotoscoping is an animation technique that involves tracing over motion picture footage, frame by frame, to produce realistic action. 
+                        This project explores both traditional and digital rotoscoping methods to create dynamic visual content.
+                    </p>
+                    
+                    <h3>Tools and Software Used</h3>
+                    <ul>
+                        <li>Adobe After Effects for compositing and effects</li>
+                        <li>Adobe Photoshop for frame-by-frame editing</li>
+                        <li>Wacom tablet for precise drawing control</li>
+                        <li>Video editing software for final assembly</li>
+                    </ul>
+                    
+                    <h3>Key Techniques Applied</h3>
+                    <p>
+                        The project incorporates various animation and video editing techniques including onion skinning for smooth transitions, 
+                        mask animation for selective coloring, and time-lapse effects to enhance the visual storytelling. 
+                        Each technique was carefully chosen to complement the rotoscope style and create engaging visual content.
+                    </p>
+                    
+                    <h3>Learning Outcomes</h3>
+                    <p>
+                        Through this project, I developed skills in frame-by-frame animation, video compositing, and visual effects application. 
+                        The process taught me patience, attention to detail, and the importance of planning in animation projects.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Weekly Progress Section -->
+            <div class="content-section">
+                <div class="section-header">
+                    <h2>Weekly Progress</h2>
+                </div>
+                <div class="progress-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">Week 1</div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Project Planning & Research</h3>
+                            <p class="timeline-description">
+                                Researched rotoscoping techniques, studied reference materials, and developed initial concept sketches. 
+                                Created detailed storyboard and timeline for the 1-minute animation.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">Week 2</div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Source Material Preparation</h3>
+                            <p class="timeline-description">
+                                Selected and prepared source video footage, set up project files, and began initial frame testing. 
+                                Established color palette and visual style guidelines.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">Week 3</div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Core Rotoscoping Work</h3>
+                            <p class="timeline-description">
+                                Completed approximately 40% of frame-by-frame tracing work. Focused on key movement sequences 
+                                and established consistent drawing patterns for efficiency.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">Week 4</div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Continued Animation & Refinement</h3>
+                            <p class="timeline-description">
+                                Completed 80% of rotoscoping work, began color application and effects testing. 
+                                Refined motion paths and ensured smooth transitions between frames.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">Week 5</div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Final Polish & Rendering</h3>
+                            <p class="timeline-description">
+                                Completed remaining frames, applied final visual effects, color grading, and audio synchronization. 
+                                Rendered final video and prepared project documentation.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Joseph Lorenz Coronado. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
