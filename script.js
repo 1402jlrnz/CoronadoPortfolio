@@ -174,7 +174,7 @@ document.querySelectorAll('.project-card').forEach(card => {
 
 // Active navigation link highlighting
 window.addEventListener('scroll', () => {
-    const sections = document.querySelectorAll('section[id="home"], section[id="projects"], section[id="about"]');
+    const sections = document.querySelectorAll('section[id="home"], section[id="projects"]');
     const navLinks = document.querySelectorAll('.nav-link');
     
     let current = '';
