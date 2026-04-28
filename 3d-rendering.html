@@ -219,7 +219,7 @@
         /* Celestial Bodies Enhanced Styles */
         .celestial-bodies {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 2rem;
             max-width: 1200px;
             margin: 0 auto;
@@ -315,6 +315,12 @@
                 grid-template-columns: 1fr;
             }
         }
+        
+        @media (max-width: 1024px) {
+            .celestial-bodies {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -371,10 +377,6 @@
                 <button class="calculate-btn" onclick="calculatePlanetAges()">
                     <i class="fas fa-calculator"></i> Calculate My Age on Other Planets
                 </button>
-                
-                <div id="results" class="results-grid" style="display: none;">
-                    <!-- Results will be populated here -->
-                </div>
             </div>
         </div>
     </section>
@@ -722,44 +724,6 @@
                     container.style.display = 'block';
                 }
             });
-
-            // Also show the original results grid for all planets
-            const resultsDiv = document.getElementById('results');
-            resultsDiv.innerHTML = '';
-
-            const planets = [
-                { name: 'Mercury', icon: '☿️', color: '#8C7853' },
-                { name: 'Venus', icon: '♀️', color: '#FFC649' },
-                { name: 'Earth', icon: '🌍', color: '#4169e1' },
-                { name: 'Moon', icon: '🌙', color: '#c0c0c0' },
-                { name: 'Mars', icon: '♂️', color: '#ff6347' },
-                { name: 'Jupiter', icon: '♃', color: '#daa520' },
-                { name: 'Saturn', icon: '♄', color: '#f4a460' },
-                { name: 'Uranus', icon: '♅', color: '#4fd1c5' },
-                { name: 'Neptune', icon: '♆', color: '#1e3a8a' }
-            ];
-
-            planets.forEach(planet => {
-                const orbitalPeriod = planetOrbitalPeriods[planet.name];
-                const ageOnPlanet = ageInEarthDays / orbitalPeriod;
-                
-                const resultCard = document.createElement('div');
-                resultCard.className = 'result-card';
-                resultCard.innerHTML = `
-                    <div class="result-planet" style="color: ${planet.color};">
-                        ${planet.icon} ${planet.name}
-                    </div>
-                    <div class="result-age">
-                        ${ageOnPlanet.toFixed(2)} years
-                    </div>
-                    <div style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">
-                        ${orbitalPeriod} days/year
-                    </div>
-                `;
-                resultsDiv.appendChild(resultCard);
-            });
-
-            resultsDiv.style.display = 'grid';
         }
 
         // Handle Enter key in input field
