@@ -354,21 +354,6 @@
         </div>
     </section>
 
-    <!-- Video Section -->
-    <section class="video-section">
-        <div class="video-container">
-            <div class="video-wrapper">
-                <video controls autoplay muted loop>
-                    <source src="earth-orbiting.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-            <div class="planet-description">
-                <strong>Earth:</strong> The third planet from the Sun and the only known planet to harbor life. Earth has a natural satellite, the Moon, and completes one orbit around the Sun every 365.25 days. It has a diameter of 12,742 km and is the densest planet in the Solar System.
-            </div>
-        </div>
-    </section>
-
     <!-- Calculator Section -->
     <section class="calculator-section">
         <div class="container">
@@ -435,6 +420,22 @@
                             <div class="celestial-icon" style="color: #4169e1;">🌍</div>
                             <h3 class="celestial-title">Earth</h3>
                         </div>
+                        
+                        <!-- Integrated Video -->
+                        <div class="planet-video" style="margin-bottom: 1.5rem;">
+                            <div class="video-wrapper" style="padding-bottom: 56.25%; position: relative; height: 0; overflow: hidden; border-radius: 10px;">
+                                <video controls autoplay muted loop style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+                                    <source src="earth-orbiting.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+                        
+                        <!-- Calculator Age Result -->
+                        <div id="earth-age-result" class="calculator-result" style="background: #e8f5e8; padding: 1rem; border-radius: 8px; margin-bottom: 1rem; text-align: center; display: none;">
+                            <strong>Your age on Earth:</strong> <span id="earth-age" style="color: #388e3c; font-size: 1.2rem; font-weight: 700;"></span>
+                        </div>
+                        
                         <div class="celestial-data">
                             <div class="data-row">
                                 <span class="data-label">Age:</span>
@@ -453,6 +454,11 @@
                                 <span class="data-value">149.6 million km</span>
                             </div>
                         </div>
+                        
+                        <div class="planet-description" style="margin-top: 1rem; padding: 1rem; background: #e3f2fd; border-radius: 8px; color: #1565c0; font-size: 0.9rem; line-height: 1.5;">
+                            The third planet from the Sun and the only known planet to harbor life. Earth has a natural satellite, the Moon, and completes one orbit around the Sun every 365.25 days. It has a diameter of 12,742 km and is the densest planet in the Solar System.
+                        </div>
+                        
                         <span class="status-badge status-complete">✅ Complete</span>
                     </div>
                     
@@ -461,6 +467,12 @@
                             <div class="celestial-icon" style="color: #c0c0c0;">🌙</div>
                             <h3 class="celestial-title">Moon</h3>
                         </div>
+                        
+                        <!-- Calculator Age Result -->
+                        <div id="moon-age-result" class="calculator-result" style="background: #fff3e0; padding: 1rem; border-radius: 8px; margin-bottom: 1rem; text-align: center; display: none;">
+                            <strong>Your age on Moon:</strong> <span id="moon-age" style="color: #f57c00; font-size: 1.2rem; font-weight: 700;"></span>
+                        </div>
+                        
                         <div class="celestial-data">
                             <div class="data-row">
                                 <span class="data-label">Age:</span>
@@ -487,6 +499,12 @@
                             <div class="celestial-icon" style="color: #ff6347;">🔴</div>
                             <h3 class="celestial-title">Mars</h3>
                         </div>
+                        
+                        <!-- Calculator Age Result -->
+                        <div id="mars-age-result" class="calculator-result" style="background: #ffebee; padding: 1rem; border-radius: 8px; margin-bottom: 1rem; text-align: center; display: none;">
+                            <strong>Your age on Mars:</strong> <span id="mars-age" style="color: #d32f2f; font-size: 1.2rem; font-weight: 700;"></span>
+                        </div>
+                        
                         <div class="celestial-data">
                             <div class="data-row">
                                 <span class="data-label">Age:</span>
@@ -682,13 +700,33 @@
                 return;
             }
 
-            const resultsDiv = document.getElementById('results');
-            resultsDiv.innerHTML = '';
-
             // Calculate age in Earth days
             const ageInEarthDays = userAge * 365.25;
 
-            // Create result cards for each planet
+            // Update planet-specific age results
+            const planetResults = {
+                'earth': { period: planetOrbitalPeriods['Earth'], element: 'earth-age', container: 'earth-age-result' },
+                'moon': { period: planetOrbitalPeriods['Moon'], element: 'moon-age', container: 'moon-age-result' },
+                'mars': { period: planetOrbitalPeriods['Mars'], element: 'mars-age', container: 'mars-age-result' }
+            };
+
+            // Update each planet's age display
+            Object.keys(planetResults).forEach(planet => {
+                const data = planetResults[planet];
+                const ageOnPlanet = ageInEarthDays / data.period;
+                const element = document.getElementById(data.element);
+                const container = document.getElementById(data.container);
+                
+                if (element && container) {
+                    element.textContent = `${ageOnPlanet.toFixed(2)} years`;
+                    container.style.display = 'block';
+                }
+            });
+
+            // Also show the original results grid for all planets
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = '';
+
             const planets = [
                 { name: 'Mercury', icon: '☿️', color: '#8C7853' },
                 { name: 'Venus', icon: '♀️', color: '#FFC649' },
