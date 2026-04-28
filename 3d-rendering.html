@@ -74,15 +74,16 @@
             object-fit: cover;
         }
         
-        .disclaimer {
-            background: #fff3cd;
-            border: 1px solid #ffeaa7;
+        .planet-description {
+            background: #e3f2fd;
+            border: 1px solid #bbdefb;
             border-radius: 8px;
             padding: 15px 20px;
             margin: 20px;
-            color: #856404;
-            font-size: 0.9rem;
+            color: #1565c0;
+            font-size: 0.95rem;
             text-align: center;
+            line-height: 1.6;
         }
         
         .content-sections {
@@ -121,10 +122,104 @@
             background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             border-radius: 2px;
         }
+
+        /* Calculator Styles */
+        .calculator-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 60px 0;
+            margin: 60px 0;
+        }
         
+        .calculator-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .calculator-title {
+            text-align: center;
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 2rem;
+        }
+        
+        .input-group {
+            margin-bottom: 2rem;
+        }
+        
+        .input-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        
+        .input-group input {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .input-group input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .calculate-btn {
+            width: 100%;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .calculate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .result-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            border-left: 4px solid #667eea;
+        }
+        
+        .result-planet {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        
+        .result-age {
+            font-size: 1.5rem;
+            color: #667eea;
+            font-weight: 700;
+        }
+
+        /* Celestial Bodies Enhanced Styles */
         .celestial-bodies {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             max-width: 1200px;
             margin: 0 auto;
@@ -135,7 +230,6 @@
             border-radius: 15px;
             padding: 2rem;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
@@ -144,24 +238,62 @@
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
         }
         
+        .celestial-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
         .celestial-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            margin-right: 1rem;
         }
         
         .celestial-title {
             font-size: 1.5rem;
             color: #2c3e50;
-            margin-bottom: 0.5rem;
+            font-weight: 600;
         }
         
-        .celestial-status {
+        .celestial-data {
+            display: grid;
+            gap: 0.8rem;
+        }
+        
+        .data-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .data-label {
+            font-weight: 600;
             color: #666;
-            font-style: italic;
         }
         
-        .coming-soon {
-            opacity: 0.6;
+        .data-value {
+            color: #2c3e50;
+            font-weight: 500;
+        }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+        
+        .status-complete {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .status-pending {
+            background: #fff3cd;
+            color: #856404;
         }
         
         @media (max-width: 768px) {
@@ -173,6 +305,14 @@
                 position: static;
                 margin-bottom: 2rem;
                 justify-content: center;
+            }
+            
+            .calculator-container {
+                padding: 2rem 1.5rem;
+            }
+            
+            .celestial-bodies {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -210,7 +350,7 @@
         </a>
         <div class="container">
             <h1>3D Solar System Project</h1>
-            <p>An interactive 3D rendering project featuring celestial bodies and orbital animations.</p>
+            <p>An interactive 3D rendering project featuring celestial bodies with detailed astronomical data and time calculations.</p>
         </div>
     </section>
 
@@ -223,8 +363,33 @@
                     Your browser does not support the video tag.
                 </video>
             </div>
-            <div class="disclaimer">
-                <strong>Earth Orbiting Animation:</strong> This video demonstrates the Earth's orbital motion around the Sun in our 3D solar system simulation.
+            <div class="planet-description">
+                <strong>Earth:</strong> The third planet from the Sun and the only known planet to harbor life. Earth has a natural satellite, the Moon, and completes one orbit around the Sun every 365.25 days. It has a diameter of 12,742 km and is the densest planet in the Solar System.
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section class="calculator-section">
+        <div class="container">
+            <div class="calculator-container">
+                <h2 class="calculator-title">Time & Motion Calculator</h2>
+                <p style="text-align: center; color: #666; margin-bottom: 2rem;">
+                    Enter your age to see how old you would be on different planets!
+                </p>
+                
+                <div class="input-group">
+                    <label for="userAge">Your Age (Earth Years)</label>
+                    <input type="number" id="userAge" placeholder="Enter your age" min="0" max="150">
+                </div>
+                
+                <button class="calculate-btn" onclick="calculatePlanetAges()">
+                    <i class="fas fa-calculator"></i> Calculate My Age on Other Planets
+                </button>
+                
+                <div id="results" class="results-grid" style="display: none;">
+                    <!-- Results will be populated here -->
+                </div>
             </div>
         </div>
     </section>
@@ -236,55 +401,215 @@
             <!-- Celestial Bodies Section -->
             <div class="content-section">
                 <div class="section-header">
-                    <h2>Celestial Bodies</h2>
+                    <h2>Celestial Bodies Data</h2>
                 </div>
                 <div class="celestial-bodies">
                     <div class="celestial-card">
-                        <div class="celestial-icon" style="color: #ffd700;">☀️</div>
-                        <h3 class="celestial-title">Sun</h3>
-                        <p class="celestial-status">Coming soon...</p>
+                        <div class="celestial-header">
+                            <div class="celestial-icon" style="color: #ffd700;">☀️</div>
+                            <h3 class="celestial-title">Sun</h3>
+                        </div>
+                        <div class="celestial-data">
+                            <div class="data-row">
+                                <span class="data-label">Age:</span>
+                                <span class="data-value">4.6 billion years</span>
+                            </div>
+                            <div class="data-row">
+                                <span class="data-label">Revolution:</span>
+                                <span class="data-value">225-250 million years (galactic)</span>
+                            </div>
+                            <div class="data-row">
+                                <span class="data-label">Orbital Period:</span>
+                                <span class="data-value">N/A (center)</span>
+                            </div>
+                            <div class="data-row">
+                                <span class="data-label">Distance from Sun:</span>
+                                <span class="data-value">0 km (center)</span>
+                            </div>
+                        </div>
+                        <span class="status-badge status-pending">Coming soon...</span>
                     </div>
                     
                     <div class="celestial-card">
-                        <div class="celestial-icon" style="color: #4169e1;">🌍</div>
-                        <h3 class="celestial-title">Earth</h3>
-                        <p class="celestial-status">✅ Complete - See video above</p>
+                        <div class="celestial-header">
+                            <div class="celestial-icon" style="color: #4169e1;">🌍</div>
+                            <h3 class="celestial-title">Earth</h3>
+                        </div>
+                        <div class="celestial-data">
+                            <div class="data-row">
+                                <span class="data-label">Age:</span>
+                                <span class="data-value">4.54 billion years</span>
+                            </div>
+                            <div class="data-row">
+                                <span class="data-label">Revolution:</span>
+                                <span class="data-value">365.25 days</span>
+                            </div>
+                            <div class="data-row">
+                                <span class="data-label">Orbital Period:</span>
+                                <span class="data-value">365.25 days</span>
+                            </div>
+                            <div class="data-row">
+                                <span class="data-label">Distance from Sun:</span>
+                                <span class="data-value">149.6 million km</span>
+                            </div>
+                        </div>
+                        <span class="status-badge status-complete">✅ Complete</span>
                     </div>
                     
                     <div class="celestial-card">
-                        <div class="celestial-icon" style="color: #c0c0c0;">🌙</div>
-                        <h3 class="celestial-title">Moon</h3>
-                        <p class="celestial-status">Coming soon...</p>
+                        <div class="celestial-header">
+                            <div class="celestial-icon" style="color: #c0c0c0;">🌙</div>
+                            <h3 class="celestial-title">Moon</h3>
+                        </div>
+                        <div class="celestial-data">
+                            <div class="data-row">
+                                <span class="data-label">Age:</span>
+                                <span class="data-value">4.53 billion years</span>
+                            </div>
+                            <div class="data-row">
+                                <span class="data-label">Revolution:</span>
+                                <span class="data-value">27.32 days (around Earth)</span>
+                            </div>
+                            <div class="data-row">
+                                <span class="data-label">Orbital Period:</span>
+                                <span class="data-value">27.32 days</span>
+                            </div>
+                            <div class="data-row">
+                                <span class="data-label">Distance from Sun:</span>
+                                <span class="data-value">149.6 million km (with Earth)</span>
+                            </div>
+                        </div>
+                        <span class="status-badge status-pending">Coming soon...</span>
                     </div>
                     
                     <div class="celestial-card">
-                        <div class="celestial-icon" style="color: #ff6347;">🔴</div>
-                        <h3 class="celestial-title">Mars</h3>
-                        <p class="celestial-status">Coming soon...</p>
+                        <div class="celestial-header">
+                            <div class="celestial-icon" style="color: #ff6347;">🔴</div>
+                            <h3 class="celestial-title">Mars</h3>
+                        </div>
+                        <div class="celestial-data">
+                            <div class="data-row">
+                                <span class="data-label">Age:</span>
+                                <span class="data-value">4.6 billion years</span>
+                            </div>
+                            <div class="data-row">
+                                <span class="data-label">Revolution:</span>
+                                <span class="data-value">687 Earth days</span>
+                            </div>
+                            <div class="data-row">
+                                <span class="data-label">Orbital Period:</span>
+                                <span class="data-value">687 days</span>
+                            </div>
+                            <div class="data-row">
+                                <span class="data-label">Distance from Sun:</span>
+                                <span class="data-value">227.9 million km</span>
+                            </div>
+                        </div>
+                        <span class="status-badge status-pending">Coming soon...</span>
                     </div>
                     
                     <div class="celestial-card">
-                        <div class="celestial-icon" style="color: #daa520;">🟠</div>
-                        <h3 class="celestial-title">Jupiter</h3>
-                        <p class="celestial-status">Coming soon...</p>
+                        <div class="celestial-header">
+                            <div class="celestial-icon" style="color: #daa520;">🟠</div>
+                            <h3 class="celestial-title">Jupiter</h3>
+                        </div>
+                        <div class="celestial-data">
+                            <div class="data-row">
+                                <span class="data-label">Age:</span>
+                                <span class="data-value">4.6 billion years</span>
+                            </div>
+                            <div class="data-row">
+                                <span class="data-label">Revolution:</span>
+                                <span class="data-value">11.86 Earth years</span>
+                            </div>
+                            <div class="data-row">
+                                <span class="data-label">Orbital Period:</span>
+                                <span class="data-value">4,333 days</span>
+                            </div>
+                            <div class="data-row">
+                                <span class="data-label">Distance from Sun:</span>
+                                <span class="data-value">778.5 million km</span>
+                            </div>
+                        </div>
+                        <span class="status-badge status-pending">Coming soon...</span>
                     </div>
                     
                     <div class="celestial-card">
-                        <div class="celestial-icon" style="color: #f4a460;">🟡</div>
-                        <h3 class="celestial-title">Saturn</h3>
-                        <p class="celestial-status">Coming soon...</p>
+                        <div class="celestial-header">
+                            <div class="celestial-icon" style="color: #f4a460;">🟡</div>
+                            <h3 class="celestial-title">Saturn</h3>
+                        </div>
+                        <div class="celestial-data">
+                            <div class="data-row">
+                                <span class="data-label">Age:</span>
+                                <span class="data-value">4.6 billion years</span>
+                            </div>
+                            <div class="data-row">
+                                <span class="data-label">Revolution:</span>
+                                <span class="data-value">29.46 Earth years</span>
+                            </div>
+                            <div class="data-row">
+                                <span class="data-label">Orbital Period:</span>
+                                <span class="data-value">10,759 days</span>
+                            </div>
+                            <div class="data-row">
+                                <span class="data-label">Distance from Sun:</span>
+                                <span class="data-value">1.432 billion km</span>
+                            </div>
+                        </div>
+                        <span class="status-badge status-pending">Coming soon...</span>
                     </div>
                     
                     <div class="celestial-card">
-                        <div class="celestial-icon" style="color: #4fd1c5;">🔵</div>
-                        <h3 class="celestial-title">Uranus</h3>
-                        <p class="celestial-status">Coming soon...</p>
+                        <div class="celestial-header">
+                            <div class="celestial-icon" style="color: #4fd1c5;">🔵</div>
+                            <h3 class="celestial-title">Uranus</h3>
+                        </div>
+                        <div class="celestial-data">
+                            <div class="data-row">
+                                <span class="data-label">Age:</span>
+                                <span class="data-value">4.6 billion years</span>
+                            </div>
+                            <div class="data-row">
+                                <span class="data-label">Revolution:</span>
+                                <span class="data-value">84.01 Earth years</span>
+                            </div>
+                            <div class="data-row">
+                                <span class="data-label">Orbital Period:</span>
+                                <span class="data-value">30,687 days</span>
+                            </div>
+                            <div class="data-row">
+                                <span class="data-label">Distance from Sun:</span>
+                                <span class="data-value">2.867 billion km</span>
+                            </div>
+                        </div>
+                        <span class="status-badge status-pending">Coming soon...</span>
                     </div>
                     
                     <div class="celestial-card">
-                        <div class="celestial-icon" style="color: #1e3a8a;">🔷</div>
-                        <h3 class="celestial-title">Neptune</h3>
-                        <p class="celestial-status">Coming soon...</p>
+                        <div class="celestial-header">
+                            <div class="celestial-icon" style="color: #1e3a8a;">🔷</div>
+                            <h3 class="celestial-title">Neptune</h3>
+                        </div>
+                        <div class="celestial-data">
+                            <div class="data-row">
+                                <span class="data-label">Age:</span>
+                                <span class="data-value">4.6 billion years</span>
+                            </div>
+                            <div class="data-row">
+                                <span class="data-label">Revolution:</span>
+                                <span class="data-value">164.79 Earth years</span>
+                            </div>
+                            <div class="data-row">
+                                <span class="data-label">Orbital Period:</span>
+                                <span class="data-value">60,190 days</span>
+                            </div>
+                            <div class="data-row">
+                                <span class="data-label">Distance from Sun:</span>
+                                <span class="data-value">4.515 billion km</span>
+                            </div>
+                        </div>
+                        <span class="status-badge status-pending">Coming soon...</span>
                     </div>
                 </div>
             </div>
@@ -296,9 +621,9 @@
                 </div>
                 <div style="max-width: 800px; margin: 0 auto; text-align: center;">
                     <p style="font-size: 1.1rem; color: #666; line-height: 1.8;">
-                        This 3D Solar System project demonstrates advanced 3D modeling and animation techniques. 
-                        Each celestial body is carefully crafted with realistic textures, lighting, and orbital mechanics. 
-                        The Earth orbiting animation showcases our ability to create complex motion paths and realistic space environments.
+                        This 3D Solar System project demonstrates advanced 3D modeling and animation techniques with accurate astronomical data. 
+                        Each celestial body includes real information about age, revolution periods, orbital periods, and distances from the Sun. 
+                        The Time & Motion calculator allows users to explore how their age would differ on various planets based on orbital mechanics.
                     </p>
                     <div style="margin-top: 2rem;">
                         <h4 style="color: #2c3e50; margin-bottom: 1rem;">Technologies Used:</h4>
@@ -307,6 +632,7 @@
                             <span style="background: #f3e5f5; color: #7b1fa2; padding: 0.5rem 1rem; border-radius: 20px;">Animation</span>
                             <span style="background: #e8f5e8; color: #388e3c; padding: 0.5rem 1rem; border-radius: 20px;">Rendering</span>
                             <span style="background: #fff3e0; color: #f57c00; padding: 0.5rem 1rem; border-radius: 20px;">Lighting</span>
+                            <span style="background: #fce4ec; color: #c2185b; padding: 0.5rem 1rem; border-radius: 20px;">Astronomical Data</span>
                         </div>
                     </div>
                 </div>
@@ -334,6 +660,76 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // Planet orbital periods in Earth days
+        const planetOrbitalPeriods = {
+            'Mercury': 88,
+            'Venus': 225,
+            'Earth': 365.25,
+            'Moon': 27.32,
+            'Mars': 687,
+            'Jupiter': 4333,
+            'Saturn': 10759,
+            'Uranus': 30687,
+            'Neptune': 60190
+        };
+
+        function calculatePlanetAges() {
+            const userAge = parseFloat(document.getElementById('userAge').value);
+            
+            if (isNaN(userAge) || userAge <= 0) {
+                alert('Please enter a valid age greater than 0');
+                return;
+            }
+
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = '';
+
+            // Calculate age in Earth days
+            const ageInEarthDays = userAge * 365.25;
+
+            // Create result cards for each planet
+            const planets = [
+                { name: 'Mercury', icon: '☿️', color: '#8C7853' },
+                { name: 'Venus', icon: '♀️', color: '#FFC649' },
+                { name: 'Earth', icon: '🌍', color: '#4169e1' },
+                { name: 'Moon', icon: '🌙', color: '#c0c0c0' },
+                { name: 'Mars', icon: '♂️', color: '#ff6347' },
+                { name: 'Jupiter', icon: '♃', color: '#daa520' },
+                { name: 'Saturn', icon: '♄', color: '#f4a460' },
+                { name: 'Uranus', icon: '♅', color: '#4fd1c5' },
+                { name: 'Neptune', icon: '♆', color: '#1e3a8a' }
+            ];
+
+            planets.forEach(planet => {
+                const orbitalPeriod = planetOrbitalPeriods[planet.name];
+                const ageOnPlanet = ageInEarthDays / orbitalPeriod;
+                
+                const resultCard = document.createElement('div');
+                resultCard.className = 'result-card';
+                resultCard.innerHTML = `
+                    <div class="result-planet" style="color: ${planet.color};">
+                        ${planet.icon} ${planet.name}
+                    </div>
+                    <div class="result-age">
+                        ${ageOnPlanet.toFixed(2)} years
+                    </div>
+                    <div style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">
+                        ${orbitalPeriod} days/year
+                    </div>
+                `;
+                resultsDiv.appendChild(resultCard);
+            });
+
+            resultsDiv.style.display = 'grid';
+        }
+
+        // Handle Enter key in input field
+        document.getElementById('userAge').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                calculatePlanetAges();
+            }
+        });
+    </script>
 </body>
 </html>
