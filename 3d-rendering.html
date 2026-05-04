@@ -357,6 +357,14 @@
         <div class="container">
             <h1>3D Solar System Project</h1>
             <p>An interactive 3D rendering project featuring celestial bodies with detailed astronomical data and time calculations.</p>
+            <div style="margin-top: 1.5rem; padding: 1rem; background: rgba(255, 255, 255, 0.1); border-radius: 10px; backdrop-filter: blur(10px);">
+                <h4 style="color: white; margin-bottom: 0.5rem; font-size: 1.1rem;">Apps Used:</h4>
+                <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                    <span style="background: rgba(255, 255, 255, 0.2); color: white; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.9rem;">Blender</span>
+                    <span style="background: rgba(255, 255, 255, 0.2); color: white; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.9rem;">Adobe After Effects</span>
+                    <span style="background: rgba(255, 255, 255, 0.2); color: white; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.9rem;">HTML/CSS/JavaScript</span>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -396,6 +404,17 @@
                             <div class="celestial-icon" style="color: #ffd700;">☀️</div>
                             <h3 class="celestial-title">Sun</h3>
                         </div>
+                        
+                        <!-- Integrated Video -->
+                        <div class="planet-video" style="margin-bottom: 1.5rem;">
+                            <div class="video-wrapper" style="padding-bottom: 56.25%; position: relative; height: 0; overflow: hidden; border-radius: 10px;">
+                                <video autoplay muted loop style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+                                    <source src="sun.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+                        
                         <div class="celestial-data">
                             <div class="data-row">
                                 <span class="data-label">Age:</span>
@@ -414,7 +433,12 @@
                                 <span class="data-value">0 km (center)</span>
                             </div>
                         </div>
-                        <span class="status-badge status-pending">Coming soon...</span>
+                        
+                        <div class="planet-description" style="margin-top: 1rem; padding: 1rem; background: #fff3e0; border-radius: 8px; color: #e65100; font-size: 0.9rem; line-height: 1.5;">
+                            The star at the center of our Solar System. The Sun is a nearly perfect sphere of hot plasma that provides the light and energy necessary for life on Earth. It has a diameter of 1.39 million km and accounts for 99.86% of the total mass of the Solar System.
+                        </div>
+                        
+                        <span class="status-badge status-complete">✅ Complete</span>
                     </div>
                     
                     <div class="celestial-card">
@@ -474,7 +498,7 @@
                         <div class="planet-video" style="margin-bottom: 1.5rem;">
                             <div class="video-wrapper" style="padding-bottom: 56.25%; position: relative; height: 0; overflow: hidden; border-radius: 10px;">
                                 <video autoplay muted loop style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
-                                    <source src="earth-orbiting.mp4" type="video/mp4">
+                                    <source src="earth-orbiting.mp4?v=2" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
                             </div>

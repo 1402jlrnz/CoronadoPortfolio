@@ -10,6 +10,8 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #f8f9fa;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .container {
@@ -284,11 +286,20 @@ section {
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 0.6s ease both;
 }
 
 .project-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.project-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.project-card:nth-child(3) {
+    animation-delay: 0.4s;
 }
 
 .project-image {
@@ -535,7 +546,7 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Loading Animation */
+/* Animations */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -545,16 +556,4 @@ html {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-.project-card {
-    animation: fadeInUp 0.6s ease forwards;
-}
-
-.project-card:nth-child(2) {
-    animation-delay: 0.2s;
-}
-
-.project-card:nth-child(3) {
-    animation-delay: 0.4s;
 }
