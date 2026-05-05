@@ -277,24 +277,6 @@
             font-weight: 500;
         }
         
-        .status-badge {
-            display: inline-block;
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-top: 1rem;
-        }
-        
-        .status-complete {
-            background: #d4edda;
-            color: #155724;
-        }
-        
-        .status-pending {
-            background: #fff3cd;
-            color: #856404;
-        }
         
         @media (max-width: 768px) {
             .project-header h1 {
@@ -437,8 +419,6 @@
                         <div class="planet-description" style="margin-top: 1rem; padding: 1rem; background: #fff3e0; border-radius: 8px; color: #e65100; font-size: 0.9rem; line-height: 1.5;">
                             The star at the center of our Solar System. The Sun is a nearly perfect sphere of hot plasma that provides the light and energy necessary for life on Earth. It has a diameter of 1.39 million km and accounts for 99.86% of the total mass of the Solar System.
                         </div>
-                        
-                        <span class="status-badge status-complete">✅ Complete</span>
                     </div>
                     
                     <div class="celestial-card">
@@ -484,8 +464,6 @@
                         <div class="planet-description" style="margin-top: 1rem; padding: 1rem; background: #f3e5f5; border-radius: 8px; color: #7b1fa2; font-size: 0.9rem; line-height: 1.5;">
                             The smallest planet in our Solar System and the closest to the Sun. Mercury has extreme temperature variations, ranging from -173°C at night to 427°C during the day. It completes one orbit around the Sun in just 88 Earth days.
                         </div>
-                        
-                        <span class="status-badge status-complete">✅ Complete</span>
                     </div>
                     
                     <div class="celestial-card">
@@ -531,8 +509,51 @@
                         <div class="planet-description" style="margin-top: 1rem; padding: 1rem; background: #e3f2fd; border-radius: 8px; color: #1565c0; font-size: 0.9rem; line-height: 1.5;">
                             The third planet from the Sun and the only known planet to harbor life. Earth has a natural satellite, the Moon, and completes one orbit around the Sun every 365.25 days. It has a diameter of 12,742 km and is the densest planet in the Solar System.
                         </div>
-                        
-                        <span class="status-badge status-complete">✅ Complete</span>
+                    </div>
+                    
+                    <div class="celestial-card">
+                        <div class="celestial-header">
+                            <div class="celestial-icon" style="color: #f4a460;">♀️</div>
+                            <h3 class="celestial-title">Venus</h3>
+                        </div>
+
+                        <!-- Integrated Video -->
+                        <div class="planet-video" style="margin-bottom: 1.5rem;">
+                            <div class="video-wrapper" style="padding-bottom: 56.25%; position: relative; height: 0; overflow: hidden; border-radius: 10px;">
+                                <video autoplay muted loop style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+                                    <source src="venus.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+
+                        <!-- Calculator Age Result -->
+                        <div id="venus-age-result" class="calculator-result" style="background: #fff8e1; padding: 1rem; border-radius: 8px; margin-bottom: 1rem; text-align: center; display: none;">
+                            <strong>Your age on Venus:</strong> <span id="venus-age" style="color: #ff8f00; font-size: 1.2rem; font-weight: 700;"></span>
+                        </div>
+
+                        <div class="celestial-data">
+                            <div class="data-row">
+                                <span class="data-label">Age:</span>
+                                <span class="data-value">4.503 billion years</span>
+                            </div>
+                            <div class="data-row">
+                                <span class="data-label">Revolution:</span>
+                                <span class="data-value">225 Earth days</span>
+                            </div>
+                            <div class="data-row">
+                                <span class="data-label">Orbital Period:</span>
+                                <span class="data-value">225 days</span>
+                            </div>
+                            <div class="data-row">
+                                <span class="data-label">Distance from Sun:</span>
+                                <span class="data-value">108.2 million km</span>
+                            </div>
+                        </div>
+
+                        <div class="planet-description" style="margin-top: 1rem; padding: 1rem; background: #fff8e1; border-radius: 8px; color: #ff8f00; font-size: 0.9rem; line-height: 1.5;">
+                            Venus is the second planet from the Sun and is similar in size to Earth. It has a thick, toxic atmosphere and surface temperatures hot enough to melt lead, making it one of the most extreme worlds in the Solar System.
+                        </div>
                     </div>
                     
                     <div class="celestial-card">
@@ -564,7 +585,9 @@
                                 <span class="data-value">149.6 million km (with Earth)</span>
                             </div>
                         </div>
-                        <span class="status-badge status-pending">Coming soon...</span>
+                        <div class="planet-description" style="margin-top: 1rem; padding: 1rem; background: #f0f4c3; border-radius: 8px; color: #827717; font-size: 0.9rem; line-height: 1.5;">
+                            The Moon is Earth’s only natural satellite and plays a crucial role in tides, eclipses, and night-time illumination. It orbits Earth every 27.32 days and reflects sunlight, making it the brightest object in the night sky.
+                        </div>
                     </div>
                     
                     <div class="celestial-card">
@@ -596,7 +619,6 @@
                                 <span class="data-value">227.9 million km</span>
                             </div>
                         </div>
-                        <span class="status-badge status-pending">Coming soon...</span>
                     </div>
                     
                     <div class="celestial-card">
@@ -622,7 +644,6 @@
                                 <span class="data-value">778.5 million km</span>
                             </div>
                         </div>
-                        <span class="status-badge status-pending">Coming soon...</span>
                     </div>
                     
                     <div class="celestial-card">
@@ -648,7 +669,6 @@
                                 <span class="data-value">1.432 billion km</span>
                             </div>
                         </div>
-                        <span class="status-badge status-pending">Coming soon...</span>
                     </div>
                     
                     <div class="celestial-card">
@@ -674,7 +694,6 @@
                                 <span class="data-value">2.867 billion km</span>
                             </div>
                         </div>
-                        <span class="status-badge status-pending">Coming soon...</span>
                     </div>
                     
                     <div class="celestial-card">
@@ -700,7 +719,6 @@
                                 <span class="data-value">4.515 billion km</span>
                             </div>
                         </div>
-                        <span class="status-badge status-pending">Coming soon...</span>
                     </div>
                 </div>
             </div>
@@ -779,6 +797,7 @@
             // Update planet-specific age results
             const planetResults = {
                 'mercury': { period: planetOrbitalPeriods['Mercury'], element: 'mercury-age', container: 'mercury-age-result' },
+                'venus': { period: planetOrbitalPeriods['Venus'], element: 'venus-age', container: 'venus-age-result' },
                 'earth': { period: planetOrbitalPeriods['Earth'], element: 'earth-age', container: 'earth-age-result' },
                 'moon': { period: planetOrbitalPeriods['Moon'], element: 'moon-age', container: 'moon-age-result' },
                 'mars': { period: planetOrbitalPeriods['Mars'], element: 'mars-age', container: 'mars-age-result' }
