@@ -3,192 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - Joseph Lorenz Coronado</title>
+    <title>About | Joseph Coronado</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        .about-header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 120px 0 80px;
-            text-align: center;
-        }
-        
-        .about-header h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        
-        .about-header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .back-link {
-            position: absolute;
-            top: 100px;
-            left: 20px;
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: color 0.3s ease;
-        }
-        
-        .back-link:hover {
-            color: #ffd700;
-        }
-        
-        .about-content {
-            padding: 80px 0;
-            background: white;
-        }
-        
-        .about-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 20px;
-            text-align: center;
-        }
-        
-        .about-text p {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            color: #555;
-            line-height: 1.8;
-        }
-        
-        .skills {
-            margin-top: 3rem;
-        }
-        
-        .skills h3 {
-            font-size: 1.8rem;
-            margin-bottom: 2rem;
-            color: #2c3e50;
-        }
-        
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            justify-content: center;
-        }
-        
-        .skill-tag {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 12px 24px;
-            border-radius: 25px;
-            font-size: 1rem;
-            font-weight: 500;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .skill-tag:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
-        }
-        
-        @media (max-width: 768px) {
-            .about-header h1 {
-                font-size: 2rem;
-            }
-            
-            .back-link {
-                position: static;
-                margin-bottom: 2rem;
-                justify-content: center;
-            }
-            
-            .about-text p {
-                font-size: 1rem;
-            }
-            
-            .skill-tags {
-                gap: 0.8rem;
-            }
-            
-            .skill-tag {
-                font-size: 0.9rem;
-                padding: 10px 20px;
-            }
-        }
-    </style>
 </head>
-<body>
-    <!-- Navigation -->
+<body class="theme-playful">
     <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-logo">
-                <a href="index.html">Joseph Coronado</a>
-            </div>
+            <a class="nav-logo" href="index.html">Joseph Coronado</a>
             <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="index.html#home" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="index.html#projects" class="nav-link">Projects</a>
-                </li>
-                <li class="nav-item">
-                    <a href="about.html" class="nav-link">About</a>
-                </li>
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="index.html#projects" class="nav-link">Projects</a></li>
+                <li><a href="about.html" class="nav-link active">About</a></li>
             </ul>
-            <div class="nav-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
+            <button class="nav-toggle" id="mobile-menu" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </nav>
 
-    <!-- About Header -->
-    <section class="about-header">
-        <a href="index.html" class="back-link">
-            <i class="fas fa-arrow-left"></i> Back to Home
-        </a>
+    <header class="page-header">
         <div class="container">
-            <h1>About Me</h1>
-            <p>Learn more about my journey in Multimedia & Authoring, focusing on Rotoscope and 3D Rendering</p>
-        </div>
-    </section>
-
-    <!-- About Content -->
-    <section class="about-content">
-        <div class="about-container">
-            <div class="about-text">
-                <p>
-                    I'm Joseph Lorenz Coronado, a passionate student exploring the creative possibilities of digital media and technology. 
-                    My academic journey focuses on 3D animation, video production, and interactive digital experiences.
+            <div class="page-header-box glass">
+                <p class="eyebrow">About Me</p>
+                <h1>Student creator building visual stories through digital media.</h1>
+                <p class="section-subtitle">
+                    I explore techniques that blend design, animation, and interaction to communicate
+                    ideas more effectively.
                 </p>
-                <p>
-                    I'm particularly interested in blending artistic vision with technical skills to create compelling visual narratives. 
-                    From 3D solar system simulations to frame-by-frame rotoscoping, I enjoy pushing the boundaries of digital creativity.
-                </p>
-                <div class="skills">
-                    <h3>Skills</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">3D Animation</span>
-                        <span class="skill-tag">Video Production</span>
-                        <span class="skill-tag">Rotoscoping</span>
-                        <span class="skill-tag">Digital Art</span>
-                        <span class="skill-tag">Creative Coding</span>
-                        <span class="skill-tag">Visual Effects</span>
-                    </div>
+                <div class="button-row">
+                    <a href="index.html" class="btn btn-ghost"><i class="fas fa-arrow-left"></i> Back Home</a>
                 </div>
             </div>
         </div>
-    </section>
+    </header>
 
-    <!-- Footer -->
+    <main class="section">
+        <div class="container split">
+            <section class="card glass">
+                <h2 class="section-title">My Direction</h2>
+                <p>
+                    I am Joseph Lorenz Coronado, a multimedia student focused on 3D animation, rotoscope
+                    production, and digital storytelling. I enjoy translating concepts into visuals that
+                    feel clear, expressive, and interactive.
+                </p>
+                <br>
+                <p>
+                    Most of my projects combine art-driven decisions with technical workflows, especially
+                    in post-production and web presentation.
+                </p>
+                <div class="chip-row">
+                    <span class="chip">3D Animation</span>
+                    <span class="chip">Video Production</span>
+                    <span class="chip">Rotoscoping</span>
+                    <span class="chip">Creative Coding</span>
+                    <span class="chip">Visual Effects</span>
+                </div>
+            </section>
+            <section class="card glass">
+                <h2 class="section-title">Learning Timeline</h2>
+                <div class="timeline">
+                    <article class="timeline-item">
+                        <h3>Foundation</h3>
+                        <p>Learning visual composition, editing fundamentals, and animation basics.</p>
+                    </article>
+                    <article class="timeline-item">
+                        <h3>Production</h3>
+                        <p>Building workflows using After Effects, Blender, and web-based presentation.</p>
+                    </article>
+                    <article class="timeline-item">
+                        <h3>Current Focus</h3>
+                        <p>Polishing project storytelling through cleaner UI and stronger interactive delivery.</p>
+                    </article>
+                    <article class="timeline-item">
+                        <h3>Next Step</h3>
+                        <p>Expand into richer motion graphics and advanced 3D scene design.</p>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </main>
+
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
+            <div class="footer-inner">
                 <p>&copy; 2024 Joseph Lorenz Coronado. All rights reserved.</p>
                 <div class="social-links">
                     <a href="#" class="social-link">
@@ -205,6 +104,7 @@
         </div>
     </footer>
 
+    <script src="unicorn.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
