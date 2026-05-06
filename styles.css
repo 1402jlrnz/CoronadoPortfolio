@@ -64,6 +64,21 @@ body.theme-comic::before {
     pointer-events: none;
 }
 
+body.with-video-bg .unicorn-background {
+    display: none;
+}
+
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+    pointer-events: none;
+}
+
 .container {
     width: min(1120px, 92vw);
     margin: 0 auto;
@@ -151,21 +166,78 @@ body.theme-comic::before {
 
 .hero {
     padding-top: 7rem;
-    min-height: 92vh;
-    display: grid;
-    place-items: center;
-}
-
-.hero-layout {
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 2rem;
+    padding-bottom: 3rem;
+    min-height: 90vh;
+    display: flex;
     align-items: center;
 }
 
-.hero-panel {
-    border-radius: 24px;
-    padding: 2rem;
+.hero .container {
+    display: grid;
+    gap: 3rem;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.hero-title {
+    font-size: clamp(2.2rem, 6vw, 4.5rem);
+    line-height: 1.15;
+    margin-bottom: 1.2rem;
+    background: linear-gradient(135deg, var(--text) 0%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-subtitle {
+    font-size: 1.05rem;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 1.8rem;
+    max-width: 65ch;
+}
+
+.hero-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+}
+
+.stat-item {
+    padding: 1.5rem 1.2rem;
+    background: rgba(12, 18, 40, 0.4);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    backdrop-filter: blur(8px);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+    background: rgba(12, 18, 40, 0.6);
+    border-color: var(--accent);
+    transform: translateY(-4px);
+}
+
+.stat-number {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.4rem;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
 }
 
 .eyebrow {
@@ -424,7 +496,10 @@ body.theme-comic::before {
 }
 
 @media (max-width: 900px) {
-    .hero-layout,
+    .hero-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .split {
         grid-template-columns: 1fr;
     }
