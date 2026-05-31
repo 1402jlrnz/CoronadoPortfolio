@@ -425,6 +425,10 @@ body.with-video-bg .unicorn-background {
     aspect-ratio: 16 / 9;
 }
 
+.media-frame video {
+    pointer-events: none;
+}
+
 .media-frame img {
     width: 100%;
     display: block;
