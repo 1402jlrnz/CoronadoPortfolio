@@ -178,19 +178,26 @@ body.with-video-bg .unicorn-background {
     padding: 1rem 1.25rem;
     display: flex;
     justify-content: center;
-    border-bottom: 1px solid var(--line);
-    background: rgba(7, 11, 24, 0.62);
-    backdrop-filter: blur(14px);
 }
 
 .topbar-inner,
 .nav-container {
-    width: min(1180px, 92vw);
-    margin: 0 auto;
-    min-height: 74px;
+    width: min(1140px, 92vw);
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 1rem;
+    border-radius: 999px;
+    padding: 0.55rem 0.85rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(7, 11, 24, 0.88);
+    backdrop-filter: blur(20px);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.topbar-shadow {
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.22);
+    border-color: rgba(255, 255, 255, 0.12);
 }
 
 .logo-ring,
@@ -210,15 +217,12 @@ body.with-video-bg .unicorn-background {
     width: 3rem;
     height: 3rem;
     border-radius: 999px;
-    border: 2px solid transparent;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
-    transition: transform 0.3s ease, border-image 0.5s ease;
-    border-image: linear-gradient(90deg, #89AACC 0%, #4E85BF 100%) 1;
+    transition: transform 0.3s ease;
 }
 
 .logo-ring:hover {
     transform: scale(1.05);
-    border-image-source: linear-gradient(270deg, #89AACC 0%, #4E85BF 100%);
 }
 
 .logo-inner {
@@ -232,21 +236,6 @@ body.with-video-bg .unicorn-background {
     font-size: 0.75rem;
     font-style: italic;
     letter-spacing: 0.12em;
-}
-
-.logo-ring {
-    width: 3rem;
-    height: 3rem;
-    border-radius: 999px;
-    border: 2px solid transparent;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
-    transition: transform 0.3s ease, border-image 0.5s ease;
-    border-image: linear-gradient(90deg, #89AACC 0%, #4E85BF 100%) 1;
-}
-
-.logo-ring:hover {
-    transform: scale(1.05);
-    border-image-source: linear-gradient(270deg, #89AACC 0%, #4E85BF 100%);
 }
 
 .nav-links,
