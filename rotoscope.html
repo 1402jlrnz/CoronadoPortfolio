@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rotoscope Project | Joseph Coronado</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body class="theme-comic with-video-bg" data-unicorn-project="nnGBqTB9UdICfClVootZ">
@@ -28,7 +28,7 @@
 
     <header class="page-header">
         <div class="container">
-            <div class="page-header-box glass">
+            <div class="page-header-box glass panel panel-accent">
                 <p class="eyebrow">Project: Rotoscope</p>
                 <h1>1-Minute Rotoscope Workflow</h1>
                 <p class="section-subtitle">
@@ -48,8 +48,11 @@
 
     <main class="section">
         <div class="container stack">
-            <section class="card glass">
-                <h2 class="section-title">Final Preview</h2>
+            <section class="card glass panel panel-accent">
+                <div class="section-heading">
+                    <p class="eyebrow">Output</p>
+                    <h2 class="section-title">Final Preview</h2>
+                </div>
                 <div class="media-frame">
                     <iframe
                         src="https://www.youtube.com/embed/P3ggFO9vRoc"
@@ -61,13 +64,17 @@
                 <p style="margin-top: 0.8rem; color: var(--muted);">Disclaimer: This video is for academic purposes only.</p>
             </section>
 
-            <section class="card glass">
-                <h2 class="section-title">Step-by-Step Pipeline</h2>
-                <div class="cards">
-                    <article class="card glass">
-                        <h3>1) Select Source Material</h3>
+            <section class="card glass panel panel-accent">
+                <div class="section-heading">
+                    <p class="eyebrow">Pipeline</p>
+                    <h2 class="section-title">Step-by-Step Pipeline</h2>
+                </div>
+                <div class="pipeline-stack">
+                    <article class="pipeline-step glass panel">
+                        <p class="step-label">Step 01</p>
+                        <h3>Select Source Material</h3>
                         <p>Use the same video from the Final Preview section as the source material.</p>
-                        <div class="media-frame" style="margin-top: 0.7rem;">
+                        <div class="media-frame media-frame--interactive">
                             <iframe
                                 src="https://www.youtube.com/embed/P3ggFO9vRoc"
                                 title="Source Material Video"
@@ -76,51 +83,67 @@
                             </iframe>
                         </div>
                     </article>
-                    <article class="card glass">
-                        <h3>2) Clip and Prepare</h3>
+                    <article class="pipeline-step glass panel">
+                        <p class="step-label">Step 02</p>
+                        <h3>Clip and Prepare</h3>
                         <p>Split footage into short segments to make detailed tracing manageable.</p>
-                        <div class="media-frame" style="margin-top: 0.7rem;">
+                        <div class="media-frame">
                             <img src="step2.jpg" alt="Step 2: clip and prepare source video">
                         </div>
                     </article>
-                    <article class="card glass">
-                        <h3>3) Build Composition</h3>
+                    <article class="pipeline-step glass panel">
+                        <p class="step-label">Step 03</p>
+                        <h3>Build Composition</h3>
                         <p>Import clips in After Effects and set up compositions for each sequence.</p>
-                        <div class="media-frame" style="margin-top: 0.7rem;">
+                        <div class="media-frame">
                             <img src="step3.jpg" alt="Step 3: build composition in After Effects">
                         </div>
                     </article>
-                    <article class="card glass">
-                        <h3>4) Trace Per Frame</h3>
+                    <article class="pipeline-step glass panel">
+                        <p class="step-label">Step 04</p>
+                        <h3>Trace Per Frame</h3>
                         <p>Use masks and tools to isolate forms and track shape changes over time.</p>
-                        <div class="media-frame" style="margin-top: 0.7rem;">
+                        <div class="media-frame">
                             <img src="step4.jpg" alt="Step 4: trace each frame">
                         </div>
                     </article>
-                    <article class="card glass">
-                        <h3>5) Color and Layer</h3>
+                    <article class="pipeline-step glass panel">
+                        <p class="step-label">Step 05</p>
+                        <h3>Color and Layer</h3>
                         <p>Apply fill effects and color hierarchy to define the visual style.</p>
-                        <div class="media-frame" style="margin-top: 0.7rem;">
+                        <div class="media-frame">
                             <img src="step5.jpg" alt="Step 5: apply colors and layers">
                         </div>
                     </article>
-                    <article class="card glass">
-                        <h3>6) Render Output</h3>
+                    <article class="pipeline-step glass panel">
+                        <p class="step-label">Step 06</p>
+                        <h3>Render Output</h3>
                         <p>Queue final composition and export the project in your selected format.</p>
-                        <div class="media-frame" style="margin-top: 0.7rem;">
+                        <div class="media-frame">
                             <img src="step6.jpg" alt="Step 6: render output settings">
+                        </div>
+                    </article>
+                    <article class="pipeline-step glass panel">
+                        <p class="step-label">Step 07</p>
+                        <h3>Final Edit in CapCut</h3>
+                        <p>Assemble exported clips, timing, and transitions in CapCut for the final edit.</p>
+                        <div class="media-frame">
+                            <img src="step7.png" alt="Step 7: final edit in CapCut">
                         </div>
                     </article>
                 </div>
             </section>
 
-            <section class="card glass">
-                <h2 class="section-title">Weekly Progress</h2>
+            <section class="card glass panel panel-accent">
+                <div class="section-heading">
+                    <p class="eyebrow">Progress Log</p>
+                    <h2 class="section-title">Weekly Progress</h2>
+                </div>
                 <div class="timeline">
                     <article class="timeline-item">
                         <h3>Week 1</h3>
                         <p>Started tracing workflow and established the core visual direction.</p>
-                        <div class="media-frame" style="margin-top: 0.6rem;">
+                        <div class="media-frame media-frame--ambient" style="margin-top: 0.6rem;">
                             <video autoplay muted loop playsinline>
                                 <source src="ROTOSCOPE/week 1 DANCE_1.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
@@ -130,7 +153,7 @@
                     <article class="timeline-item">
                         <h3>Week 2</h3>
                         <p>Improved timing and consistency in frame-to-frame tracing.</p>
-                        <div class="media-frame" style="margin-top: 0.6rem;">
+                        <div class="media-frame media-frame--ambient" style="margin-top: 0.6rem;">
                             <video autoplay muted loop playsinline>
                                 <source src="ROTOSCOPE/week 2.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
@@ -140,7 +163,7 @@
                     <article class="timeline-item">
                         <h3>Week 3</h3>
                         <p>Expanded layering and cleanup for smoother motion output.</p>
-                        <div class="media-frame" style="margin-top: 0.6rem;">
+                        <div class="media-frame media-frame--ambient" style="margin-top: 0.6rem;">
                             <video autoplay muted loop playsinline>
                                 <source src="ROTOSCOPE/week 3.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
@@ -150,7 +173,7 @@
                     <article class="timeline-item">
                         <h3>Week 4</h3>
                         <p>Refined colors and polished final compositing quality.</p>
-                        <div class="media-frame" style="margin-top: 0.6rem;">
+                        <div class="media-frame media-frame--ambient" style="margin-top: 0.6rem;">
                             <video autoplay muted loop playsinline>
                                 <source src="ROTOSCOPE/week4.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
@@ -160,7 +183,7 @@
                     <article class="timeline-item">
                         <h3>Week 5</h3>
                         <p>Final pass and delivery stage.</p>
-                        <div class="media-frame" style="margin-top: 0.6rem;">
+                        <div class="media-frame media-frame--ambient" style="margin-top: 0.6rem;">
                             <video autoplay muted loop playsinline>
                                 <source src="ROTOSCOPE/week 5.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
@@ -170,7 +193,7 @@
                     <article class="timeline-item">
                         <h3>Week 6</h3>
                         <p>Project completion and final renders.</p>
-                        <div class="media-frame" style="margin-top: 0.6rem;">
+                        <div class="media-frame media-frame--ambient" style="margin-top: 0.6rem;">
                             <video autoplay muted loop playsinline>
                                 <source src="ROTOSCOPE/week 6.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
@@ -180,7 +203,7 @@
                     <article class="timeline-item">
                         <h3>Week 7</h3>
                         <p>Additional polish and export tests; added new scene variations.</p>
-                        <div class="media-frame" style="margin-top: 0.6rem;">
+                        <div class="media-frame media-frame--ambient" style="margin-top: 0.6rem;">
                             <video autoplay muted loop playsinline poster="ROTOSCOPE/week7-poster.svg">
                                 <source src="ROTOSCOPE/week7.mp4?v=20260531" type="video/mp4">
                                 Your browser does not support the video tag.

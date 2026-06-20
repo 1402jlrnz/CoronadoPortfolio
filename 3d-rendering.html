@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3D Solar System | Joseph Coronado</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body class="theme-solar with-video-bg" data-unicorn-project="kOOeOSyqiszU9MGZITlt">
@@ -28,12 +28,12 @@
 
     <header class="page-header">
         <div class="container">
-            <div class="page-header-box glass">
+            <div class="page-header-box glass panel panel-accent">
                 <p class="eyebrow">Project: 3D Rendering</p>
                 <h1>Solar System Interactive Showcase</h1>
                 <p class="section-subtitle">
-                    A multimedia project combining rendered planetary media and dynamic calculations
-                    to visualize time and motion.
+                    Rendered planetary media, downloadable Blender and Python assets, and an interactive
+                    age calculator built for multimedia presentation.
                 </p>
                 <div class="chip-row">
                     <span class="chip">Blender</span>
@@ -48,28 +48,44 @@
     </header>
 
     <main class="section">
-        <div class="container">
-            <section class="card glass">
-                <h2 class="section-title">Solar System Overview Video</h2>
-                <p class="section-subtitle">
-                    A full cinematic overview video will be added at the top of this page soon.
-                </p>
-                <div class="media-frame" style="display: grid; place-items: center; min-height: 260px; color: var(--muted);">
-                    <p>Overview video coming soon</p>
+        <div class="container page-shell">
+            <section class="feature-spotlight glass panel panel-accent">
+                <div class="section-heading">
+                    <p class="eyebrow">Overview</p>
+                    <h2 class="section-title">Solar System Overview Video</h2>
+                    <p class="section-subtitle">Full cinematic pass of the complete solar system render.</p>
+                </div>
+                <div class="media-frame media-frame--interactive">
+                    <video controls preload="metadata" playsinline>
+                        <source src="planets/FINAL.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="asset-bar" style="margin-top: 1rem;">
+                    <a class="btn btn-ghost asset-btn" href="python/final.py" download>Download Python</a>
+                    <a class="btn btn-ghost asset-btn" href="blender_files/final.blend" download>Download Blender</a>
+                    <button class="btn btn-primary copy-script-btn" type="button" data-planet="final">Copy Script</button>
+                    <button class="btn btn-ghost view-script-btn" type="button" data-planet="final">View Script</button>
+                </div>
+                <div class="script-panel" id="script-panel-final" hidden>
+                    <div class="script-panel-head">
+                        <span>Blender Python Script</span>
+                        <button class="btn btn-ghost script-toggle" type="button" data-planet="final">Hide</button>
+                    </div>
+                    <pre class="script-code"><code id="script-code-final">Loading script...</code></pre>
                 </div>
             </section>
 
-            <section class="card glass">
-                <h2 class="section-title">Time & Motion Calculator</h2>
-                <p class="section-subtitle">
-                    Enter your age and compare your age across major celestial bodies.
-                </p>
+            <section class="calculator-panel glass panel panel-accent">
+                <div class="section-heading">
+                    <p class="eyebrow">Interactive Tool</p>
+                    <h2 class="section-title">Time & Motion Calculator</h2>
+                    <p class="section-subtitle">Enter your age and compare how old you would be on other worlds.</p>
+                </div>
                 <label for="userAge">Your age on Earth (years)</label>
                 <input type="number" id="userAge" class="calc-input" min="1" max="150" placeholder="e.g. 19">
-                <div class="button-row" style="margin-top: 1rem;">
-                    <button class="btn btn-primary" type="button" id="calcBtn">
-                        <i class="fas fa-calculator"></i> Calculate
-                    </button>
+                <div class="button-row">
+                    <button class="btn btn-primary" type="button" id="calcBtn">Calculate</button>
                 </div>
                 <div id="calcError" style="color: var(--danger); margin-top: 0.8rem;"></div>
                 <div id="calculator-results" class="results-grid" style="display: none;">
@@ -81,164 +97,16 @@
                 </div>
             </section>
 
-            <section class="section">
-                <h2 class="section-title">Rendered Planet Videos</h2>
-                <p class="section-subtitle">
-                    Current renders now include Sun through Pluto, with new Uranus, Neptune, and Pluto media added.
-                </p>
-                <div class="stack">
-                    <article class="card glass">
-                        <h3>Sun</h3>
-                        <p>Center star of the solar system; source of light and life-supporting energy.</p>
-                        <div class="chip-row">
-                            <span class="chip">Age: 4.6B years</span>
-                            <span class="chip">Mass: 99.86% of system</span>
-                        </div>
-                        <div class="media-frame" style="margin-top: 0.9rem;">
-                            <video autoplay muted loop controls>
-                                <source src="planets/sun.mp4?v=20260505" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-                    </article>
-
-                    <article class="card glass">
-                        <h3>Mercury</h3>
-                        <p>Smallest planet and closest to the Sun, with extreme temperature changes.</p>
-                        <div class="chip-row">
-                            <span class="chip">Year: 88 days</span>
-                            <span class="chip">Distance: 57.9M km</span>
-                        </div>
-                        <div class="media-frame" style="margin-top: 0.9rem;">
-                            <video autoplay muted loop controls>
-                                <source src="planets/mercury.mp4?v=20260505" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-                    </article>
-
-                    <article class="card glass">
-                        <h3>Venus</h3>
-                        <p>Earth-sized planet with a thick atmosphere and very high surface temperatures.</p>
-                        <div class="chip-row">
-                            <span class="chip">Year: 225 days</span>
-                            <span class="chip">Distance: 108.2M km</span>
-                        </div>
-                        <div class="media-frame" style="margin-top: 0.9rem;">
-                            <video autoplay muted loop controls>
-                                <source src="planets/venus.mp4?v=20260505" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-                    </article>
-
-                    <article class="card glass">
-                        <h3>Earth</h3>
-                        <p>The only known life-bearing planet with a balanced climate and liquid water.</p>
-                        <div class="chip-row">
-                            <span class="chip">Year: 365.25 days</span>
-                            <span class="chip">Distance: 149.6M km</span>
-                        </div>
-                        <div class="media-frame" style="margin-top: 0.9rem;">
-                            <video autoplay muted loop controls>
-                                <source src="planets/earth.mp4?v=20260505" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-                    </article>
-
-                    <article class="card glass">
-                        <h3>Mars</h3>
-                        <p>Rocky red planet with polar ice caps and dramatic dust storms.</p>
-                        <div class="chip-row">
-                            <span class="chip">Year: 687 days</span>
-                            <span class="chip">Distance: 227.9M km</span>
-                        </div>
-                        <div class="media-frame" style="margin-top: 0.9rem;">
-                            <video autoplay muted loop controls>
-                                <source src="planets/mars.mp4?v=20260505" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-                    </article>
-
-                    <article class="card glass">
-                        <h3>Jupiter</h3>
-                        <p>Gas giant with powerful storms and the largest system of moons.</p>
-                        <div class="chip-row">
-                            <span class="chip">Year: 4,333 days</span>
-                            <span class="chip">Distance: 778.5M km</span>
-                        </div>
-                        <div class="media-frame" style="margin-top: 0.9rem;">
-                            <video autoplay muted loop controls>
-                                <source src="planets/jupiter.mp4?v=20260505" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-                    </article>
-
-                    <article class="card glass">
-                        <h3>Saturn</h3>
-                        <p>Ringed beauty with a dramatic silhouette and complex banded clouds.</p>
-                        <div class="chip-row">
-                            <span class="chip">Year: 10,759 days</span>
-                            <span class="chip">Distance: 1.43B km</span>
-                        </div>
-                        <div class="media-frame" style="margin-top: 0.9rem;">
-                            <video autoplay muted loop controls>
-                                <source src="planets/saturn0001-0240.mp4?v=20260505" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-                    </article>
-
-                    <article class="card glass">
-                        <h3>Uranus</h3>
-                        <p>Ice giant with a tilted axis and a cool blue appearance from methane in the atmosphere.</p>
-                        <div class="chip-row">
-                            <span class="chip">Year: 30,687 days</span>
-                            <span class="chip">Distance: 2.87B km</span>
-                        </div>
-                        <div class="media-frame" style="margin-top: 0.9rem;">
-                            <video autoplay muted loop controls>
-                                <source src="planets/uranus.mp4?v=20260529" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-                    </article>
-
-                    <article class="card glass">
-                        <h3>Neptune</h3>
-                        <p>Deep blue ice giant known for supersonic winds and striking atmospheric streaks.</p>
-                        <div class="chip-row">
-                            <span class="chip">Year: 60,190 days</span>
-                            <span class="chip">Distance: 4.5B km</span>
-                        </div>
-                        <div class="media-frame" style="margin-top: 0.9rem;">
-                            <video autoplay muted loop controls>
-                                <source src="planets/neptune.mp4?v=20260529" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-                    </article>
-
-                    <article class="card glass">
-                        <h3>Pluto</h3>
-                        <p>Dwarf planet at the edge of the system with a cold, textured surface and a slow elliptical orbit.</p>
-                        <div class="chip-row">
-                            <span class="chip">Year: 90,560 days</span>
-                            <span class="chip">Distance: 5.9B km</span>
-                        </div>
-                        <div class="media-frame" style="margin-top: 0.9rem;">
-                            <video autoplay muted loop controls>
-                                <source src="planets/pluto.mp4?v=20260529" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-                    </article>
+            <section>
+                <div class="section-heading">
+                    <p class="eyebrow">Planet Library</p>
+                    <h2 class="section-title">Rendered Planet Videos</h2>
+                    <p class="section-subtitle">
+                        Each entry includes the render preview, downloadable source files, and a copyable Blender script.
+                    </p>
                 </div>
+                <div id="planet-catalog" class="planet-catalog"></div>
             </section>
-
         </div>
     </main>
 
@@ -262,6 +130,8 @@
     </footer>
 
     <script src="unicorn.js"></script>
+    <script src="planet-data.js"></script>
+    <script src="solar-system.js"></script>
     <script>
         const orbitalPeriods = {
             mercury: 88,

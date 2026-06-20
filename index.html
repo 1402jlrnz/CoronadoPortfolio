@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Joseph Coronado | Multimedia Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body class="theme-playful">
@@ -25,11 +25,11 @@
 
     <header id="home" class="hero">
         <div class="container">
-            <div class="hero-content">
+            <div class="hero-content glass panel panel-accent">
                 <p class="eyebrow">Multimedia + Authoring</p>
                 <h1 class="hero-title">Creative Visuals with Technical Storytelling</h1>
                 <p class="hero-subtitle">
-                    I craft motion-based projects blending 3D rendering, rotoscope animation, 
+                    I craft motion-based projects blending 3D rendering, rotoscope animation,
                     and interactive experiences into compelling visual narratives.
                 </p>
                 <div class="button-row">
@@ -37,21 +37,21 @@
                     <a href="about.html" class="btn btn-ghost">About My Process</a>
                 </div>
             </div>
-            
+
             <div class="hero-stats">
-                <div class="stat-item">
+                <div class="stat-item glass">
                     <span class="stat-number">2</span>
                     <span class="stat-label">Projects</span>
                 </div>
-                <div class="stat-item">
+                <div class="stat-item glass">
                     <span class="stat-number">5+</span>
                     <span class="stat-label">Tools</span>
                 </div>
-                <div class="stat-item">
+                <div class="stat-item glass">
                     <span class="stat-number">Hybrid</span>
                     <span class="stat-label">3D + Video</span>
                 </div>
-                <div class="stat-item">
+                <div class="stat-item glass">
                     <span class="stat-number">Visual</span>
                     <span class="stat-label">Storyteller</span>
                 </div>
@@ -61,39 +61,42 @@
 
     <section id="projects" class="section">
         <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <p class="section-subtitle">
-                Two hands-on projects showcasing cinematic style, frame-by-frame workflows, and
-                interactive presentation.
-            </p>
+            <div class="section-heading">
+                <p class="eyebrow">Portfolio</p>
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">
+                    Two hands-on projects showcasing cinematic style, frame-by-frame workflows, and
+                    interactive presentation.
+                </p>
+            </div>
             <div class="cards">
-                <article class="card glass">
-                    <h3><i class="fas fa-globe"></i> 3D Solar System</h3>
-                    <p>
-                        Interactive astronomy showcase with animated planetary data, rendered media,
-                        and a custom age calculator.
+                <article class="card glass project-card panel-accent">
+                    <h3>3D Solar System</h3>
+                    <p class="project-meta">
+                        Interactive astronomy showcase with rendered planetary media, downloadable Blender/Python
+                        assets, and a custom age calculator.
                     </p>
                     <div class="chip-row">
                         <span class="chip">3D Rendering</span>
                         <span class="chip">Astronomical Data</span>
                         <span class="chip">JavaScript</span>
                     </div>
-                    <div class="button-row" style="margin-top: 1rem;">
+                    <div class="button-row">
                         <a href="3d-rendering.html" class="btn btn-primary">Open Project</a>
                     </div>
                 </article>
-                <article class="card glass">
-                    <h3><i class="fas fa-video"></i> 1-Minute Rotoscope</h3>
-                    <p>
+                <article class="card glass project-card panel-accent">
+                    <h3>1-Minute Rotoscope</h3>
+                    <p class="project-meta">
                         A weekly breakdown of rotoscope production from source clips to layered tracing
                         and final render export.
                     </p>
                     <div class="chip-row">
                         <span class="chip">Rotoscoping</span>
                         <span class="chip">After Effects</span>
-                        <span class="chip">Pipeline</span>
+                        <span class="chip">CapCut</span>
                     </div>
-                    <div class="button-row" style="margin-top: 1rem;">
+                    <div class="button-row">
                         <a href="rotoscope.html" class="btn btn-primary">Open Project</a>
                     </div>
                 </article>
