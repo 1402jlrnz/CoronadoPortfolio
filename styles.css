@@ -168,6 +168,7 @@ body.with-video-bg .unicorn-background {
     max-width: 700px;
 }
 
+.topbar,
 .navbar {
     position: fixed;
     top: 0;
@@ -179,6 +180,7 @@ body.with-video-bg .unicorn-background {
     backdrop-filter: blur(14px);
 }
 
+.topbar-inner,
 .nav-container {
     width: min(1180px, 92vw);
     margin: 0 auto;
@@ -188,6 +190,7 @@ body.with-video-bg .unicorn-background {
     justify-content: space-between;
 }
 
+.logo-ring,
 .nav-logo {
     text-decoration: none;
     color: var(--text);
@@ -195,12 +198,34 @@ body.with-video-bg .unicorn-background {
     letter-spacing: 0.04em;
     text-transform: uppercase;
     font-size: 0.92rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
+.logo-ring {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 999px;
+    border: 2px solid transparent;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+    transition: transform 0.3s ease, border-image 0.5s ease;
+    border-image: linear-gradient(90deg, #89AACC 0%, #4E85BF 100%) 1;
+}
+
+.logo-ring:hover {
+    transform: scale(1.05);
+    border-image-source: linear-gradient(270deg, #89AACC 0%, #4E85BF 100%);
+}
+
+.nav-links,
 .nav-menu {
-    list-style: none;
     display: flex;
     gap: 1.25rem;
+}
+
+.nav-links {
+    align-items: center;
 }
 
 .nav-link {
