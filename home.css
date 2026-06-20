@@ -206,6 +206,7 @@ a {
   position: absolute;
   inset: 0;
   overflow: hidden;
+  z-index: 0;
 }
 
 .hero-video {
@@ -216,12 +217,15 @@ a {
   min-height: 100%;
   transform: translate(-50%, -50%);
   object-fit: cover;
+  z-index: -1;
+  background: #050617;
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.32);
+  z-index: 1;
 }
 
 .hero-bottom-fade {
