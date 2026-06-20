@@ -175,6 +175,9 @@ body.with-video-bg .unicorn-background {
     left: 0;
     right: 0;
     z-index: 1000;
+    padding: 1rem 1.25rem;
+    display: flex;
+    justify-content: center;
     border-bottom: 1px solid var(--line);
     background: rgba(7, 11, 24, 0.62);
     backdrop-filter: blur(14px);
@@ -201,6 +204,34 @@ body.with-video-bg .unicorn-background {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+}
+
+.logo-ring {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 999px;
+    border: 2px solid transparent;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+    transition: transform 0.3s ease, border-image 0.5s ease;
+    border-image: linear-gradient(90deg, #89AACC 0%, #4E85BF 100%) 1;
+}
+
+.logo-ring:hover {
+    transform: scale(1.05);
+    border-image-source: linear-gradient(270deg, #89AACC 0%, #4E85BF 100%);
+}
+
+.logo-inner {
+    width: 2.15rem;
+    height: 2.15rem;
+    border-radius: 999px;
+    background: var(--bg);
+    display: grid;
+    place-items: center;
+    font-family: serif;
+    font-size: 0.75rem;
+    font-style: italic;
+    letter-spacing: 0.12em;
 }
 
 .logo-ring {
@@ -711,15 +742,33 @@ body.with-video-bg .unicorn-background {
 
 .result {
     border: 1px solid var(--line);
-    border-radius: 12px;
-    padding: 0.7rem;
-    text-align: center;
-    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text);
+    text-transform: none;
+}
+
+.result-label {
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.result-value {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--text);
+    justify-self: end;
 }
 
 .result strong {
-    display: block;
-    color: var(--accent);
+    all: unset;
 }
 
 .footer {
