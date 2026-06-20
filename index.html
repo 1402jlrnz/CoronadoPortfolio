@@ -23,13 +23,13 @@
 
         <nav class="topbar" id="topbar">
           <div class="topbar-inner">
-            <button class="logo-ring" aria-label="Home">
+            <a href="#home" class="logo-ring" aria-label="Home">
               <span class="logo-inner">JLC</span>
-            </button>
+            </a>
             <div class="nav-links">
               <a href="#home" class="nav-link active">Home</a>
-              <a href="#work" class="nav-link">Work</a>
-              <a href="#contact" class="nav-link">Resume</a>
+              <a href="#work" class="nav-link">Portfolio</a>
+              <a href="about.html" class="nav-link">About</a>
             </div>
           </div>
         </nav>
@@ -38,7 +38,7 @@
           <p class="eyebrow blur-in">COLLECTION '26</p>
           <h1 class="hero-title name-reveal">Joseph Coronado</h1>
           <p class="hero-role">
-            A <span id="role-text" class="role-word">Creative</span> lives in Chicago.
+            A <span id="role-text" class="role-word">Creative</span> based in the Philippines.
           </p>
           <p class="hero-description">
             Designing seamless digital interactions by focusing on the unique nuances that bring systems to life.
@@ -70,36 +70,39 @@
             </p>
           </div>
 
-          <div class="work-grid">
-            <article class="project-card project-card-large">
-              <div class="project-card-bg project-01"></div>
-              <div class="project-card-overlay">
-                <a href="3d-rendering.html" class="project-pill">Open — 3D Solar System</a>
+          <div class="project-list">
+            <article class="project-card-slim">
+              <div>
+                <h3>3D Solar System</h3>
+                <p class="project-meta">
+                  Interactive astronomy showcase with rendered planetary media, downloadable Blender/Python assets, and a custom age calculator.
+                </p>
+                <div class="chip-row">
+                  <span class="chip">3D Rendering</span>
+                  <span class="chip">Blender</span>
+                  <span class="chip">Python</span>
+                </div>
               </div>
+              <a href="3d-rendering.html" class="btn btn-solid">Open Project</a>
             </article>
-            <article class="project-card project-card-small">
-              <div class="project-card-bg project-02"></div>
-              <div class="project-card-overlay">
-                <a href="rotoscope.html" class="project-pill">Open — 1-Minute Rotoscope</a>
+            <article class="project-card-slim">
+              <div>
+                <h3>1-Minute Rotoscope</h3>
+                <p class="project-meta">
+                  A frame-by-frame rotoscope build with weekly progress videos and polished final renders.
+                </p>
+                <div class="chip-row">
+                  <span class="chip">Rotoscope</span>
+                  <span class="chip">After Effects</span>
+                  <span class="chip">Video</span>
+                </div>
               </div>
+              <a href="rotoscope.html" class="btn btn-solid">Open Project</a>
             </article>
           </div>
         </section>
       </main>
 
-      <section class="section section-contact" id="contact">
-        <div class="contact-video-shell">
-          <video id="contact-video" class="contact-video" muted playsinline autoplay loop></video>
-          <div class="contact-overlay"></div>
-        </div>
-
-        <div class="contact-panel">
-          <p class="eyebrow">Available</p>
-          <h2 class="section-title">Building the future</h2>
-          <p class="section-copy">Let's connect and make something meaningful together.</p>
-          <a href="mailto:hello@josephcoronado.com" class="btn btn-solid">Email hello@josephcoronado.com</a>
-        </div>
-      </section>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/hls.js@2.4.1"></script>
