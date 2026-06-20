@@ -32,13 +32,23 @@ function initHls(videoId) {
     hls.loadSource(source);
     hls.attachMedia(video);
     hls.on(Hls.Events.MEDIA_ATTACHED, () => {
-      video.play().catch(() => null);
+      video.play().catch(() => {
+        console.warn('HLS video autoplay blocked, fallback background will remain visible.');
+      });
+    });
+    hls.on(Hls.Events.ERROR, (event, data) => {
+      console.warn('HLS error', data);
+      video.classList.add('video-fallback');
     });
   } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
     video.src = source;
     video.addEventListener('loadedmetadata', () => {
-      video.play().catch(() => null);
+      video.play().catch(() => {
+        console.warn('Native HLS autoplay blocked, fallback background will remain visible.');
+      });
     });
+  } else {
+    video.classList.add('video-fallback');
   }
 }
 
