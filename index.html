@@ -1,129 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joseph Coronado | Multimedia Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body class="theme-playful">
-    <nav class="navbar">
-        <div class="nav-container">
-            <a class="nav-logo" href="index.html">Joseph Coronado</a>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="about.html" class="nav-link">About</a></li>
-            </ul>
-            <button class="nav-toggle" id="mobile-menu" aria-label="Toggle navigation">
-                <i class="fas fa-bars"></i>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Joseph Coronado | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital,wght@0,400;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="home.css" />
+  </head>
+  <body class="home-page">
+    <div class="page-shell">
+      <header class="hero-section" id="home">
+        <div class="video-shell">
+          <video id="hero-video" class="hero-video" muted playsinline autoplay loop></video>
+          <div class="hero-overlay"></div>
+          <div class="hero-bottom-fade"></div>
+        </div>
+
+        <nav class="topbar" id="topbar">
+          <div class="topbar-inner">
+            <button class="logo-ring" aria-label="Home">
+              <span class="logo-inner">JA</span>
             </button>
+            <div class="nav-links">
+              <a href="#home" class="nav-link active">Home</a>
+              <a href="#work" class="nav-link">Work</a>
+              <a href="#contact" class="nav-link">Resume</a>
+            </div>
+            <a href="mailto:hello@josephcoronado.com" class="nav-cta">
+              <span class="nav-cta-border"></span>
+              <span class="nav-cta-bg">Say hi ↗</span>
+            </a>
+          </div>
+        </nav>
+
+        <div class="hero-copy">
+          <p class="eyebrow blur-in">COLLECTION '26</p>
+          <h1 class="hero-title name-reveal">Joseph Coronado</h1>
+          <p class="hero-role">
+            A <span id="role-text" class="role-word">Creative</span> lives in Chicago.
+          </p>
+          <p class="hero-description">
+            Designing seamless digital interactions by focusing on the unique nuances that bring systems to life.
+          </p>
+          <div class="hero-actions">
+            <a href="#work" class="btn btn-solid">See Works</a>
+            <a href="#contact" class="btn btn-outline">Reach out</a>
+          </div>
         </div>
-    </nav>
 
-    <header id="home" class="hero">
-        <div class="container">
-            <div class="hero-content glass panel panel-accent">
-                <p class="eyebrow">Multimedia + Authoring</p>
-                <h1 class="hero-title">Creative Visuals with Technical Storytelling</h1>
-                <p class="hero-subtitle">
-                    I craft motion-based projects blending 3D rendering, rotoscope animation,
-                    and interactive experiences into compelling visual narratives.
-                </p>
-                <div class="button-row">
-                    <a href="#projects" class="btn btn-primary">Explore Projects</a>
-                    <a href="about.html" class="btn btn-ghost">About My Process</a>
-                </div>
-            </div>
-
-            <div class="hero-stats">
-                <div class="stat-item glass">
-                    <span class="stat-number">2</span>
-                    <span class="stat-label">Projects</span>
-                </div>
-                <div class="stat-item glass">
-                    <span class="stat-number">5+</span>
-                    <span class="stat-label">Tools</span>
-                </div>
-                <div class="stat-item glass">
-                    <span class="stat-number">Hybrid</span>
-                    <span class="stat-label">3D + Video</span>
-                </div>
-                <div class="stat-item glass">
-                    <span class="stat-number">Visual</span>
-                    <span class="stat-label">Storyteller</span>
-                </div>
-            </div>
+        <div class="scroll-indicator">
+          <span>SCROLL</span>
+          <div class="scroll-line">
+            <span class="scroll-highlight"></span>
+          </div>
         </div>
-    </header>
+      </header>
 
-    <section id="projects" class="section">
-        <div class="container">
-            <div class="section-heading">
-                <p class="eyebrow">Portfolio</p>
-                <h2 class="section-title">Featured Projects</h2>
-                <p class="section-subtitle">
-                    Two hands-on projects showcasing cinematic style, frame-by-frame workflows, and
-                    interactive presentation.
-                </p>
+      <main>
+        <section class="section section-work" id="work">
+          <div class="section-header">
+            <div class="eyebrow-line"></div>
+            <p class="eyebrow-label">Selected Work</p>
+            <h2 class="section-title">
+              Featured <span class="section-em">projects</span>
+            </h2>
+            <p class="section-copy">
+              A selection of projects I've worked on, from concept to launch.
+            </p>
+            <a href="#contact" class="section-button">View all work ↗</a>
+          </div>
+
+          <div class="work-grid">
+            <article class="project-card project-card-large">
+              <div class="project-card-bg project-01"></div>
+              <div class="project-card-overlay">
+                <span class="project-pill">View — 3D Solar System</span>
+              </div>
+            </article>
+            <article class="project-card project-card-small">
+              <div class="project-card-bg project-02"></div>
+              <div class="project-card-overlay">
+                <span class="project-pill">View — Rotoscope Workflow</span>
+              </div>
+            </article>
+            <article class="project-card project-card-small-alt">
+              <div class="project-card-bg project-03"></div>
+              <div class="project-card-overlay">
+                <span class="project-pill">View — Motion Study</span>
+              </div>
+            </article>
+            <article class="project-card project-card-large-alt">
+              <div class="project-card-bg project-04"></div>
+              <div class="project-card-overlay">
+                <span class="project-pill">View — Brand Identity</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section section-journal">
+          <div class="section-header section-header-alt">
+            <div class="eyebrow-line"></div>
+            <p class="eyebrow-label">Journal</p>
+            <h2 class="section-title">
+              Recent <span class="section-em">thoughts</span>
+            </h2>
+            <p class="section-copy">
+              Quick updates and ideas on designing experiences, systems, and interactions.
+            </p>
+            <a href="#contact" class="section-button">View all ↗</a>
+          </div>
+
+          <div class="journal-list">
+            <article class="journal-item">
+              <div class="journal-badge">Brand strategy</div>
+              <p class="journal-title">Designing easier onboarding experiences for new products.</p>
+              <div class="journal-meta">5 min read · Jul 2026</div>
+            </article>
+            <article class="journal-item">
+              <div class="journal-badge">Motion</div>
+              <p class="journal-title">Why subtle animation improves perception and trust.</p>
+              <div class="journal-meta">4 min read · Jun 2026</div>
+            </article>
+            <article class="journal-item">
+              <div class="journal-badge">Product</div>
+              <p class="journal-title">Building a design system that supports creative velocity.</p>
+              <div class="journal-meta">6 min read · May 2026</div>
+            </article>
+            <article class="journal-item">
+              <div class="journal-badge">Research</div>
+              <p class="journal-title">Translating user insights into high-fidelity workflows.</p>
+              <div class="journal-meta">3 min read · Apr 2026</div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section section-explore">
+          <div class="explore-pin">
+            <p class="eyebrow">Explorations</p>
+            <h2 class="section-title">Visual <span class="section-em">playground</span></h2>
+            <p class="section-copy">A layered scroll experience exploring motion, texture, and composition.</p>
+            <a href="https://dribbble.com" class="section-button">Dribbble ↗</a>
+          </div>
+          <div class="explore-grid">
+            <div class="explore-card explore-card-01">01</div>
+            <div class="explore-card explore-card-02">02</div>
+            <div class="explore-card explore-card-03">03</div>
+            <div class="explore-card explore-card-04">04</div>
+            <div class="explore-card explore-card-05">05</div>
+            <div class="explore-card explore-card-06">06</div>
+          </div>
+        </section>
+
+        <section class="section section-stats">
+          <div class="stats-grid">
+            <div class="stat-card">
+              <p class="stat-number">20+</p>
+              <p class="stat-label">Years Experience</p>
             </div>
-            <div class="cards">
-                <article class="card glass project-card panel-accent">
-                    <h3>3D Solar System</h3>
-                    <p class="project-meta">
-                        Interactive astronomy showcase with rendered planetary media, downloadable Blender/Python
-                        assets, and a custom age calculator.
-                    </p>
-                    <div class="chip-row">
-                        <span class="chip">3D Rendering</span>
-                        <span class="chip">Astronomical Data</span>
-                        <span class="chip">JavaScript</span>
-                    </div>
-                    <div class="button-row">
-                        <a href="3d-rendering.html" class="btn btn-primary">Open Project</a>
-                    </div>
-                </article>
-                <article class="card glass project-card panel-accent">
-                    <h3>1-Minute Rotoscope</h3>
-                    <p class="project-meta">
-                        A weekly breakdown of rotoscope production from source clips to layered tracing
-                        and final render export.
-                    </p>
-                    <div class="chip-row">
-                        <span class="chip">Rotoscoping</span>
-                        <span class="chip">After Effects</span>
-                        <span class="chip">CapCut</span>
-                    </div>
-                    <div class="button-row">
-                        <a href="rotoscope.html" class="btn btn-primary">Open Project</a>
-                    </div>
-                </article>
+            <div class="stat-card">
+              <p class="stat-number">95+</p>
+              <p class="stat-label">Projects Done</p>
             </div>
+            <div class="stat-card">
+              <p class="stat-number">200%</p>
+              <p class="stat-label">Satisfied Clients</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <section class="section section-contact" id="contact">
+        <div class="contact-video-shell">
+          <video id="contact-video" class="contact-video" muted playsinline autoplay loop></video>
+          <div class="contact-overlay"></div>
         </div>
-    </section>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-inner">
-                <p>&copy; 2024 Joseph Lorenz Coronado. All rights reserved.</p>
-                <div class="social-links">
-                    <a href="#" class="social-link">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="#" class="social-link">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="#" class="social-link">
-                        <i class="fab fa-youtube"></i>
-                    </a>
-                </div>
-            </div>
+        <div class="contact-panel">
+          <p class="eyebrow">Available</p>
+          <h2 class="section-title">Building the future</h2>
+          <p class="section-copy">Let's connect and make something meaningful together.</p>
+          <a href="mailto:hello@josephcoronado.com" class="btn btn-solid">Email hello@josephcoronado.com</a>
+          <div class="footer-row">
+            <div class="availability-dot"></div>
+            <p>Available for projects</p>
+          </div>
+          <div class="footer-links">
+            <a href="#">Twitter</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">Dribbble</a>
+            <a href="#">GitHub</a>
+          </div>
         </div>
-    </footer>
+      </section>
+    </div>
 
-    <script src="unicorn.js"></script>
-    <script src="script.js"></script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@2.4.1"></script>
+    <script src="home.js"></script>
+  </body>
 </html>

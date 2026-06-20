@@ -327,6 +327,17 @@ body.with-video-bg .unicorn-background {
     gap: 0.8rem;
 }
 
+.asset-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+}
+
+.asset-bar .btn {
+    white-space: nowrap;
+}
+
 .btn {
     text-decoration: none;
     border: 1px solid transparent;
@@ -487,13 +498,14 @@ body.with-video-bg .unicorn-background {
 }
 
 .planet-copy h3 {
-    font-size: 1.55rem;
+    font-size: 1.25rem;
     letter-spacing: -0.02em;
     margin-bottom: 0.35rem;
 }
 
 .planet-copy p {
     color: var(--muted);
+    font-size: 0.95rem;
 }
 
 .asset-bar {
@@ -561,7 +573,7 @@ body.with-video-bg .unicorn-background {
 
 .step-label {
     font-family: var(--mono);
-    font-size: 0.78rem;
+    font-size: 0.85rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--accent);
@@ -597,6 +609,16 @@ body.with-video-bg .unicorn-background {
     position: relative;
     margin-bottom: 1rem;
     padding-left: 1rem;
+}
+
+.timeline-item h3 {
+    font-size: 1.18rem;
+    margin-bottom: 0.35rem;
+}
+
+.timeline-item p {
+    font-size: 0.98rem;
+    color: var(--muted);
 }
 
 .timeline-item::before {
