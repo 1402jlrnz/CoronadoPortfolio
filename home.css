@@ -144,7 +144,8 @@ a {
   font-size: clamp(3.6rem, 7vw, 6.6rem);
   line-height: 0.95;
   letter-spacing: -0.05em;
-  color: hsl(var(--text));
+  color: #ffffff;
+  text-shadow: 0 0 1px rgba(255,255,255,0.85), 0 16px 40px rgba(0,0,0,0.35);
 }
 
 .hero-subtitle {
