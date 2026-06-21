@@ -148,6 +148,21 @@ body.with-video-bg .unicorn-background {
 .section-heading .section-subtitle {
     margin: 0;
     max-width: 62ch;
+    color: var(--muted);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.section-transition {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    padding-top: clamp(1rem, 2vw, 1.5rem);
+    padding-bottom: clamp(1rem, 2vw, 1.5rem);
+    background: rgba(255,255,255,0.03);
+}
+
+.section-transition .section-title {
+    color: var(--accent);
 }
 
 .section {
