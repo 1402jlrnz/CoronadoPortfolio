@@ -147,10 +147,15 @@ a {
   color: hsl(var(--text));
 }
 
-.hero-role {
+.hero-subtitle {
+  margin: 0.75rem 0 0;
   font-size: clamp(1.1rem, 1.75vw, 1.45rem);
   color: hsl(var(--text));
   max-width: 42rem;
+}
+
+.hero-role {
+  display: inline;
 }
 
 .role-word {

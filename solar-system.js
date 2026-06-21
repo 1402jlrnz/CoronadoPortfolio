@@ -2,7 +2,7 @@ const scriptCache = new Map();
 
 function buildPlanetCard(planet, index) {
     const article = document.createElement("article");
-    article.className = "planet-card glass";
+    article.className = "planet-card glass panel panel-accent";
     article.innerHTML = `
         <div class="planet-card-top">
             <span class="planet-index">${String(index + 1).padStart(2, "0")}</span>
@@ -27,6 +27,9 @@ function buildPlanetCard(planet, index) {
             <a class="btn btn-ghost asset-btn" href="blender_files/${planet.id}.blend" download>
                 Download Blender
             </a>
+            <button class="btn btn-ghost view-script-btn" type="button" data-planet="${planet.id}">
+                View Script
+            </button>
             <button class="btn btn-primary copy-script-btn" type="button" data-planet="${planet.id}">
                 Copy Script
             </button>
@@ -40,9 +43,6 @@ function buildPlanetCard(planet, index) {
             </div>
             <pre class="script-code"><code id="script-code-${planet.id}">Loading script...</code></pre>
         </div>
-        <button class="btn btn-ghost view-script-btn" type="button" data-planet="${planet.id}">
-            View Script
-        </button>
     `;
     return article;
 }

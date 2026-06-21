@@ -537,6 +537,8 @@ body.with-video-bg .unicorn-background {
     padding: clamp(1rem, 2vw, 1.5rem);
     display: grid;
     gap: 1rem;
+    border: 1px solid rgba(255,255,255,0.12);
+    background: rgba(3, 8, 21, 0.75);
 }
 
 .planet-card-top {
