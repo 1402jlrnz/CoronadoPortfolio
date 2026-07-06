@@ -532,6 +532,44 @@ body.with-video-bg .unicorn-background {
     gap: 1.2rem;
 }
 
+.procedure-steps {
+    margin-top: 1rem;
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.step-card {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    display: grid;
+    gap: 0.85rem;
+    border: 1px solid rgba(255,255,255,0.12);
+    background: rgba(3, 8, 21, 0.75);
+}
+
+.step-card img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 16 / 9;
+}
+
+.step-card h3 {
+    font-size: 1rem;
+    margin: 0;
+}
+
+.step-card p {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin: 0 0 0.75rem;
+}
+
 .planet-card {
     border-radius: var(--radius-lg);
     padding: clamp(1rem, 2vw, 1.5rem);
