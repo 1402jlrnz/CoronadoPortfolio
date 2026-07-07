@@ -153,6 +153,16 @@ body.with-video-bg .unicorn-background {
     line-height: 1.6;
 }
 
+.procedure-heading {
+    text-align: center;
+    justify-items: center;
+}
+
+.final-video-disclaimer {
+    text-align: center;
+    margin-top: 0.8rem;
+}
+
 .section-transition {
     border-top: 1px solid rgba(255,255,255,0.08);
     border-bottom: 1px solid rgba(255,255,255,0.08);
